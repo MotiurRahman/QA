@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        
+        Ti.App.addEventListener("app:fromTitanium", function(e) {
+               // alert(e.message);
+            });
+            
+            
+            google.load("visualization", "1", {packages: ["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            
+            
+            
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', 'KWH'],
+                    ['Month', 1000],
+                    ['20', 1170],
+                    ['Month', 660],
+                    ['40', 1030],
+                    ['50', 1000],
+                    ['Month', 1170],
+                    ['70', 660],
+                    ['80', 1030],
+                    ['90', 1000],
+                    ['100', 1170],
+                    ['110', 660],
+                    ['120', 1030],
+                ]);
+
+                var options = {
+                    title: 'Annual Usages', 
+                     vAxis: {
+                        title: 'Month',  
+                    },
+                    hAxis: {
+                        title: 'Month',  
+                    }
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    </body>
+</html>
+
