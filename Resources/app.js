@@ -23,6 +23,7 @@ if (Ti.version < 1.8) {
 	/*var data = {
 	 user : 'sinepulse',
 	 pass : '123456',
+	 motiur rahman
 	 };*/
 
 	var userinfo = JSON.parse(Ti.App.Properties.getString('userinfo'));
